@@ -1,0 +1,11 @@
+# Ignora la cartella dell'ambiente virtuale
+venv/
+.env/
+
+# File temporanei
+__pycache__/
+*.pyc
+*.pyo
+
+# Credenziali di accesso a google drive
+credential.json
