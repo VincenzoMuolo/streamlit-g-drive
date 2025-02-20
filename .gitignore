@@ -9,3 +9,4 @@ __pycache__/
 
 # Credenziali di accesso a google drive
 .streamlit/
+g_drive_oauth.py

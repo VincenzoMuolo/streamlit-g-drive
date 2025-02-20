@@ -1,0 +1,18 @@
+name: Python Script Automation
+# il lunedì a mezzanotte
+on:
+    schedule:
+        - cron: "10 * * * *"
+#                ^ ^ ^ ^ ^
+#                | | | | |
+#           minuto | | | |
+#                ora | | |
+#      giorno del mese | |
+#                    ese |
+#   giorno della settimana
+jobs:
+    run_script:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Call Streamlit Crawler
+              run: curl -X GET "https://g-drive-api-test.streamlit.app/streamlit_test.py"

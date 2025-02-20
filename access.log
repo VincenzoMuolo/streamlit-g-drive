@@ -1,0 +1,12 @@
+2025-02-20 16:03:04,393 - INFO - Accesso effettuato dall'utente: user
+2025-02-20 16:03:04,405 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-02-20 16:03:04,416 - INFO - Attempting refresh to obtain initial access_token
+2025-02-20 16:03:04,439 - INFO - Refreshing access_token
+2025-02-20 16:03:13,964 - INFO - Accesso effettuato dall'utente: user
+2025-02-20 16:03:13,967 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-02-20 16:03:13,978 - INFO - Attempting refresh to obtain initial access_token
+2025-02-20 16:03:14,000 - INFO - Refreshing access_token
+2025-02-20 16:14:10,683 - INFO - Accesso effettuato dall'utente: User
+2025-02-20 16:14:10,687 - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-02-20 16:14:10,705 - INFO - Attempting refresh to obtain initial access_token
+2025-02-20 16:14:10,728 - INFO - Refreshing access_token
