@@ -19,7 +19,9 @@ def getFileListFromGDrive():
     except Exception as e:
         return {"error": str(e)}
 
-def putFilesInGoogleDrive():
+if __name__ == "__main__":
+    st.title("Streamlit - Google Drive API")
+    st.subheader("Upload File su Google Drive")
     uploaded_file = st.file_uploader("Scegli un file", type=["csv", "png", "jpg", "pdf"])
     if uploaded_file is not None:
         st.write(f"Caricamento di: {uploaded_file.name}")
@@ -41,13 +43,6 @@ def putFilesInGoogleDrive():
         ).execute()
 
         st.success(f"File caricato con successo! ID: {media['id']}")
-
-if __name__ == "__main__":
-    st.title("Streamlit - Google Drive API")
-    
-    if st.button("Carica File"):
-        st.subheader("Upload File su Google Drive")
-        putFilesInGoogleDrive()
 
     st.subheader("Lista File su Google Drive")
     if st.button("Visualizza File"):
