@@ -1,6 +1,6 @@
 import streamlit as st
 
-from g_drive_api_config import GoogleDriveService
+from g_drive_oauth import GoogleDriveService
 
 # Id della cartella, ottenibile dall'url, prendendo solo la parte finale, senza path
 FOLDER_ID = "1Z-5RvDMSYvPlmSIdKffDHYwzChWRMa8G"

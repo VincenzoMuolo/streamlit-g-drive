@@ -8,4 +8,4 @@ __pycache__/
 *.pyo
 
 # Credenziali di accesso a google drive
-credential.json
+.streamlit/
