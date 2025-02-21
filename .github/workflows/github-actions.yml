@@ -1,8 +1,8 @@
 name: Python Script Automation
-# il lunedì a mezzanotte
+# Con questa impostazione viene eseguito ogni giorno a mezzanotte (UTC)
 on:
     schedule:
-        - cron: "0 0 * * 1"
+        - cron: "0 0 * * *"
 #                ^ ^ ^ ^ ^
 #                | | | | |
 #           minuto | | | |
