@@ -1,8 +1,16 @@
 name: Python Script Automation
-# Con questa impostazione viene eseguito ogni giorno a mezzanotte (UTC)
 on:
     schedule:
-        - cron: "0 0 * * *"
+        - cron: "30 0 * * *"
+jobs:
+    run_script:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Call Streamlit Crawler
+              run: curl -X GET "https://g-drive-api-test.streamlit.app/streamlit_test.py"
+
+#    schedule:
+#       - cron: "* * * * *"
 #                ^ ^ ^ ^ ^
 #                | | | | |
 #           minuto | | | |
@@ -10,9 +18,3 @@ on:
 #      giorno del mese | |
 #                    ese |
 #   giorno della settimana
-jobs:
-    run_script:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Call Streamlit Crawler
-              run: curl -X GET "https://g-drive-api-test.streamlit.app/streamlit_test.py"

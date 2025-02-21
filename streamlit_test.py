@@ -4,7 +4,6 @@ import logging
 from g_drive_oauth import GoogleDriveService
 from googleapiclient.http import MediaFileUpload
 
-# Id della cartella, ottenibile dall'url, prendendo solo la parte finale, senza path
 FOLDER_ID = st.secrets["google_drive_folder"]["folder-id"]
 LOG_FILE = "access.log"
 
@@ -26,12 +25,7 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
-def log_access(user):
-    """Registra l'accesso di un utente nel file di log"""
-    logging.info(f"Accesso effettuato dall'utente: {user}")
-
 def upload_to_drive(log_file, folder_id):
-    """Carica il file di log su Google Drive"""
     drive_service = GoogleDriveService().build()
 
     file_metadata = {
@@ -45,14 +39,6 @@ def upload_to_drive(log_file, folder_id):
     print(f"File caricato su Drive con ID: {file.get('id')}")
 
 if __name__ == "__main__":
-    # Controllo se l'accesso proviene da una GitHub Action
-    if os.getenv("GITHUB_ACTION"):
-        actor = os.getenv("GITHUB_ACTOR")
-        log_access(f"GitHub Action - {actor}")
-    else:
-        actor = "User"
-    log_access(actor)
-
     upload_to_drive(LOG_FILE, FOLDER_ID)
     
     st.title("Streamlit - Google Drive API")
