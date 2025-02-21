@@ -4,6 +4,7 @@ import logging
 from g_drive_oauth import GoogleDriveService
 from googleapiclient.http import MediaFileUpload
 
+# Id della cartella, ottenibile dall'url, prendendo solo la parte finale, senza path
 FOLDER_ID = st.secrets["google_drive_folder"]["folder-id"]
 LOG_FILE = "access.log"
 
@@ -24,8 +25,9 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
-
+   
 def upload_to_drive(log_file, folder_id):
+    logging.info(f"Accesso effettuato dall'utente: ")
     drive_service = GoogleDriveService().build()
 
     file_metadata = {
