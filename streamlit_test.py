@@ -5,7 +5,8 @@ from g_drive_oauth import GoogleDriveService
 from googleapiclient.http import MediaFileUpload
 
 # Id della cartella, ottenibile dall'url, prendendo solo la parte finale, senza path
-FOLDER_ID = st.secrets["folder-id"]
+FOLDER_ID = st.secrets["google_drive_API_service_account"] 
+st.secrets["google_drive_folder"] 
 LOG_FILE = "access.log"
 
 def getFileListFromGDrive():
