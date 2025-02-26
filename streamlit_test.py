@@ -16,9 +16,6 @@ def getFileListFromGDrive():
         return {"files": list_file.get("files", [])}
     except Exception as e:
         return {"error": str(e)}     
-   media = MediaFileUpload(log_file, mimetype="text/plain")
-    file = drive_service.files().create(body=file_metadata, media_body=media, fields="id").execute()
-    print(f"File caricato su Drive con ID: {file.get('id')}")
 
 if __name__ == "__main__":   
     st.title("Streamlit - Google Drive API")
